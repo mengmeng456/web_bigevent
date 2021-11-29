@@ -13,8 +13,8 @@ $.ajaxPrefilter(function(options) {
             Authorization: localStorage.getItem('token') || ''
         };
         options.complete = function(res) {
-            console.log(res);
-            console.log('执行了complete回调：');
+            // console.log(res);
+            // console.log('执行了complete回调：');
             // 在complete回调函数中，可以使用res.responseJSON拿到服务器响应回来的数据
             if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
                 // 1.当用户为非法用户时，强制清空token
